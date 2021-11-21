@@ -5,10 +5,12 @@
 # include <stdio.h>
 # include <unistd.h>
 
-void	ft_putchar(char c, int *counter);
-void	ft_putstr(char *str, int *counter);
-void	ft_putnbrhex(unsigned int nb, int lower, int *counter);
-void	ft_putsnbr(int nb, int *counter);
-void	ft_putunbr(unsigned int unb, int *counter);
+int counter;
+
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_putnbrhex(unsigned long int nb, int lower);
+void	ft_putsnbr(int nb);
+void	ft_putunbr(unsigned int unb);
 
 #endif
