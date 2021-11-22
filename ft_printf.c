@@ -6,7 +6,7 @@
 /*   By: abouchfa <abouchfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:10:00 by abouchfa          #+#    #+#             */
-/*   Updated: 2021/11/20 11:35:49 by abouchfa         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:25:59 by abouchfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_format(char format, va_list valist)
 	if (format == 'c')
 		ft_putchar(va_arg(valist, int));
 	else if (format == 's')
-		ft_putstr(va_arg(valist, char*));
+		ft_putstr(va_arg(valist, char *));
 	else if (format == 'd' || format == 'i')
 		ft_putsnbr(va_arg(valist, int));
 	else if (format == 'u')
@@ -30,40 +30,25 @@ void	print_format(char format, va_list valist)
 		ft_putchar('%');
 	else if (format == 'p')
 	{
-		counter += write (1, "0x", 2);
+		ft_putstr("0x");
 		ft_putnbrhex(va_arg(valist, unsigned long int), 1);
 	}
 }
 
-
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int		i;
-	va_list valist;
-	
-	i = 0;
+	va_list	valist;
+
 	va_start(valist, str);
-	counter = 0;
-	while (str[i])
+	g_counter = 0;
+	while (*str)
 	{
-		if (str[i] == '%')
-			print_format(str[++i], valist);
+		if (*str == '%')
+			print_format(*++str, valist);
 		else
-			ft_putchar(str[i]);
-		i++;
+			ft_putchar(*str);
+		str++;
 	}
 	va_end(valist);
-	return (counter);
+	return (g_counter);
 }
-
-// int main()
-// {
-// 	void *p1 = "Hello";
-// 	void *p2 = "Hello";
-// 	// char *s = NULL;
-// 	int pc = printf("%p", p1);
-// 	printf("\n");
-// 	int fc = ft_printf("%p", p2);
-// 	printf("\n");
-// 	printf ("thier %d| mine %d", pc, fc);
-// }

@@ -6,7 +6,7 @@
 /*   By: abouchfa <abouchfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:34:03 by abouchfa          #+#    #+#             */
-/*   Updated: 2021/11/20 11:32:54 by abouchfa         ###   ########.fr       */
+/*   Updated: 2021/11/22 19:25:33 by abouchfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	ft_putchar(char c)
 {
 	if (write(1, &c, 1) == 1)
-		counter++;
+		g_counter++;
 }
 
 void	ft_putstr(char *str)
 {
-	char *null;
+	char	*null;
 
-	null  = "(null)";
+	null = "(null)";
 	if (str)
 	{
 		if (*str)
@@ -60,7 +60,8 @@ void	ft_putunbr(unsigned int unb)
 
 void	ft_putnbrhex(unsigned long int nb, int lower)
 {
-	char *hex;
+	char	*hex;
+
 	if (lower)
 		hex = "0123456789abcdef";
 	else
