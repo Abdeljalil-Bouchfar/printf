@@ -6,7 +6,7 @@
 /*   By: abouchfa <abouchfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 19:25:19 by abouchfa          #+#    #+#             */
-/*   Updated: 2021/11/22 19:25:26 by abouchfa         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:58:30 by abouchfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	ft_putstr(char *str);
 void	ft_putnbrhex(unsigned long int nb, int lower);
 void	ft_putsnbr(int nb);
 void	ft_putunbr(unsigned int unb);
+int		ft_printf(const char *str, ...);
 
 #endif

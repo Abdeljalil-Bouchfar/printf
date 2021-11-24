@@ -6,7 +6,7 @@
 /*   By: abouchfa <abouchfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:10:00 by abouchfa          #+#    #+#             */
-/*   Updated: 2021/11/22 19:25:59 by abouchfa         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:10:39 by abouchfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	print_format(char format, va_list valist)
 	else if (format == 'u')
 		ft_putunbr(va_arg(valist, unsigned int));
 	else if (format == 'x')
-		ft_putnbrhex(va_arg(valist, unsigned long int), 1);
+		ft_putnbrhex(va_arg(valist, unsigned int), 1);
 	else if (format == 'X')
-		ft_putnbrhex(va_arg(valist, unsigned long int), 0);
+		ft_putnbrhex(va_arg(valist, unsigned int), 0);
 	else if (format == '%')
 		ft_putchar('%');
 	else if (format == 'p')
