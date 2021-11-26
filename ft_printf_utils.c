@@ -6,7 +6,7 @@
 /*   By: abouchfa <abouchfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:34:03 by abouchfa          #+#    #+#             */
-/*   Updated: 2021/11/22 19:25:33 by abouchfa         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:54:06 by abouchfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	ft_putunbr(unsigned int unb)
 	ft_putchar((unb % 10) + '0');
 }
 
-void	ft_putnbrhex(unsigned long int nb, int lower)
+void	ft_putnbrhex(unsigned long int nb, char format)
 {
 	char	*hex;
 
-	if (lower)
+	if (format == 'x')
 		hex = "0123456789abcdef";
 	else
 		hex = "0123456789ABCDEF";
@@ -71,6 +71,6 @@ void	ft_putnbrhex(unsigned long int nb, int lower)
 		ft_putchar(hex[nb]);
 		return ;
 	}
-	ft_putnbrhex(nb / 16, lower);
+	ft_putnbrhex(nb / 16, format);
 	ft_putchar(hex[nb % 16]);
 }
